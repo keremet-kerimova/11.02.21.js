@@ -19,5 +19,6 @@ let buttom = querySelector('buttom');
 buttom.addEventListiner('click', function(){
    let li = document.createElement('li');
    li.innerText = input.value
-   ul.append(li)
+   ul.append(li);
+   input.value = ""
 });
