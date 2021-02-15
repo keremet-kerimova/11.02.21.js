@@ -1,38 +1,10 @@
-
-// let fruits = ["apple","corret " , "current",  "banana", "potato"];
-// let ul = document.createElement('ul')
-// document.body.append(ul);
-// for  ( let  i = 0; i<fruits.length; i++ ){
-//    let button = document.createElement("button");
-//    button.innerText = "remove";
-//     let li = document.createElement('li');
-//     li.innerText=fruits[i]
-//     ul.append(li);
-//     ul.append(button);
-// };
-// document.body.append(ul)
-// let input  = document.querySelector("input");
-// let button = document.querySelector("button");
-// button.addEventListener('click',  function () {
-//     let li = document.createElement('li');
-//     let button2 = document.createElement("button");
-//     button2.innerText = "remove";
-//     li.innerText= input.value
-//     ul.append(li);
-//     ul.append(button2);
-//     input.value= "";
-// });
-
-// button.addEventListener('click', function(){
-// button.remove();
-// });
-
 let fruits = ['Apple', 'Banana', 'Orange', 'Lemon'];
+
 let ul = document.createElement('ul');
 let input = document.querySelector("input");
 let btn = document.querySelector("button");
 
-document.body.append(ul);
+document.body.prepend(ul);
 
 btn.addEventListener('click', addElement);
 function addElement(){
@@ -57,6 +29,13 @@ for (let i in fruits) {
     li.innerText = fruits[i];
     let btn = document.createElement("button");
     let span = document.createElement('span');
+    span.addEventListener('click', function(){
+        li.append(span)
+    })
+    let span2 = document.createElement('.selected');
+    span2.addEventListener('click', function(){
+        li.remove(span2)
+    });
     btn.innerText = "Remove";
     btn.addEventListener('click', function(){
         li.remove();
